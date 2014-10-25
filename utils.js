@@ -26,3 +26,25 @@ function getDomain(target){
 	}
 	return target;
 }
+
+//Function to detect orientation. Useful for use on responsive
+// to use, type the following and of course set the width, initial-scale etc respectively:
+/*********************************/
+//window.addEventListener('orientationchange', doOnOrientationChange);
+//doOnOrientationChange();
+/*********************************/
+function doOnOrientationChange()
+  {
+    switch(window.orientation) 
+    {  
+      case -90:
+      case 90:
+       // alert('landscape');
+		document.getElementById("viewport").setAttribute("content", "width=device-width,  initial-scale=0.83, maximum-scale=1, minimum-scale=0.83");
+        break; 
+      default:
+        //alert('portrait');
+		document.getElementById("viewport").setAttribute("content", "width=740,  initial-scale=0.61, maximum-scale=1, minimum-scale=0.61");
+        break; 
+    }
+  }
